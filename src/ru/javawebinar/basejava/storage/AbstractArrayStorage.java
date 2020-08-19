@@ -34,6 +34,7 @@ public abstract class AbstractArrayStorage implements Storage {
             throw new StorageException("Storage overflow", r.getUuid());
         } else {
             InsertElement(r, index);
+            size++;
         }
     }
 
@@ -43,6 +44,8 @@ public abstract class AbstractArrayStorage implements Storage {
             throw new NotExistStorageException(uuid);
         } else {
             fillDeletedElement(index);
+            storage[size - 1] = null;
+            size--;
         }
     }
 

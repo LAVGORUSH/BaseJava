@@ -19,13 +19,10 @@ public class ArrayArrayStorage extends AbstractArrayStorage {
     @Override
     protected void InsertElement(Resume r, int index) {
         storage[size] = r;
-        size++;
     }
 
     @Override
     protected void fillDeletedElement(int index) {
         storage[index] = storage[size - 1];
-        storage[size - 1] = null;
-        size--;
     }
 }
