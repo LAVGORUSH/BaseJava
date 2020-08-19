@@ -5,7 +5,7 @@ import ru.javawebinar.basejava.model.Resume;
 /**
  * Array based storage for Resumes
  */
-public class ArrayArrayStorage extends AbstractArrayStorage {
+public class ArrayStorage extends AbstractArrayStorage {
 
     protected int getIndex(String uuid) {
         for (int i = 0; i < size; i++) {
@@ -19,13 +19,10 @@ public class ArrayArrayStorage extends AbstractArrayStorage {
     @Override
     protected void InsertElement(Resume r, int index) {
         storage[size] = r;
-        size++;
     }
 
     @Override
     protected void fillDeletedElement(int index) {
         storage[index] = storage[size - 1];
-        storage[size - 1] = null;
-        size--;
     }
 }
